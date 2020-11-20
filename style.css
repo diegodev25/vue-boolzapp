@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
 }
 
 /* BACKGROUND BLOCK RULES */
@@ -10,7 +11,7 @@ header {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100px;
+  height: 130px;
   width: 100%;
   background-color: #049688;
   z-index: -1;
@@ -18,23 +19,140 @@ header {
 
 .section {
   position: absolute;
-  top: 100px;
+  top: 130px;
   left: 0;
   width: 100%;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 130px);
   background-color: #dbdbd2;
   z-index: -1;
 }
 
 /* CONTAINER MAIN RULES */
 .container {
-  display: flex;
-  position: fixed;
-  top: 30px;
-  left: 0;
   width: 70%;
-  transform: translate(22%, 0%);
-  height: 750px;
+  margin: 30px auto;
+  height: 90vh;
   border: 1px solid black;
   z-index: 10;
+}
+
+.contacts {
+  float: left;
+  width: 35%;
+  height: 100%;
+  border: 1px solid black;
+}
+
+.username {
+  display: flex;
+  justify-content: space-between;
+  height: 75px;
+  padding: 10px;
+  background-color: #eaeaea;
+  border-right: 1px solid #dbdbd2;
+}
+
+.avatar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.avatar img {
+  width: 55px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.icon-right {
+  display: flex;
+  align-items: center;
+}
+
+.icon-right i {
+  font-size: 22px;
+  color: #b1b1b1;
+  margin-right: 20px;
+}
+
+.icon-right i:nth-child(3) {
+  margin-right: 10px;
+}
+
+.notification {
+  display: flex;
+  align-items: center;
+  height: 85px;
+  padding: 0 15px;
+  background-color: #8fdafc;
+}
+
+.notification i {
+  font-size: 30px;
+  color: #8fdafc;
+  padding: 12px 8px;
+  margin-right: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+}
+
+.text h5 {
+  font-size: 15px;
+}
+
+.text h6 {
+  font-size: 12px;
+  color: #4f7485;
+  text-decoration: underline;
+}
+
+.search-input {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  background-color: #fafafa;
+}
+
+.search-input input {
+  width: 470px;
+  height: 35px;
+  text-indent: 60px;
+  font-size: 12px;
+  border: none;
+  border-radius: 3px;
+}
+
+.search-input i {
+  position: absolute;
+  top: 18px;
+  left: 30px;
+  font-size: 20px;
+  color: #b6b9bb;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.message {
+  float: left;
+  width: 65%;
+  height: 100%;
+  border: 1px solid black;
 }
