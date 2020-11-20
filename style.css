@@ -1,0 +1,38 @@
+/* GENERAL RULES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BACKGROUND BLOCK RULES */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100px;
+  width: 100%;
+  background-color: #049688;
+  z-index: -1;
+}
+
+.section {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 100px);
+  background-color: #dbdbd2;
+  z-index: -1;
+}
+
+/* CONTAINER MAIN RULES */
+.container {
+  display: flex;
+  width: 70%;
+  margin: auto;
+  transform: translateY(30px);
+  height: 90vh;
+  border: 1px solid black;
+  z-index: 10;
+}
