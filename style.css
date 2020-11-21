@@ -43,6 +43,7 @@ header {
   border: 1px solid black;
 }
 
+/* INFO USERNAME AND ICON CONTACT RULES */
 .username {
   display: flex;
   justify-content: space-between;
@@ -79,6 +80,7 @@ header {
   margin-right: 10px;
 }
 
+/* SECTION DISABLE NOTIFICATIONS RULES */
 .notification {
   display: flex;
   align-items: center;
@@ -111,6 +113,7 @@ header {
   text-decoration: underline;
 }
 
+/* SEARCH FOR A NEW CHAT RULES */
 .search-input {
   display: flex;
   position: relative;
@@ -137,22 +140,92 @@ header {
   color: #b6b9bb;
 }
 
+/* RECENT CHAT RULES */
+.recent-chat {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  height: calc(100% - 215px);
+  overflow: auto;
+}
 
+.chat {
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  padding: 13px 10px;
+  border-bottom: 1px solid #f5f5f5;
+}
 
+.name-img img {
+  width: 70px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
 
+.name-img {
+  display: flex;
+}
 
+.text-info > h4 {
+  margin-bottom: 5px;
+}
 
+.text-info > h5 {
+  color: #b6b9bb;
+}
 
+.date {
+  display: flex;
+  justify-content: flex-end;
+}
 
+.date h5 {
+  color: #b6b9bb;
+}
 
-
-
-
-
-
+/* SECTION MESSAGE */
 .message {
   float: left;
   width: 65%;
   height: 100%;
   border: 1px solid black;
+}
+
+/* HEADER INFO MSG RULES */
+.block-info {
+  display: flex;
+  justify-content: space-between;
+  height: 75px;
+  padding: 10px 0 10px 10px;
+  background-color: #eaeaea;
+}
+
+.avt-img {
+  display: flex;
+}
+
+.avt-img img {
+  width: 60px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.i-msg {
+  display: flex;
+  align-items: center;
+}
+
+.msg-info {
+  padding: 10px 0;
+}
+
+.msg-info h5 {
+  color: #6f777a;
+}
+
+.i-msg i {
+  font-size: 22px;
+  margin-right: 20px;
+  color: 	#b1b1b1;
 }
