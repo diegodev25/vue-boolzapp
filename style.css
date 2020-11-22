@@ -32,7 +32,6 @@ header {
   width: 70%;
   margin: 30px auto;
   height: 90vh;
-  border: 1px solid black;
   z-index: 10;
 }
 
@@ -40,7 +39,6 @@ header {
   float: left;
   width: 35%;
   height: 100%;
-  border: 1px solid black;
 }
 
 /* INFO USERNAME AND ICON CONTACT RULES */
@@ -50,7 +48,7 @@ header {
   height: 75px;
   padding: 10px;
   background-color: #eaeaea;
-  border-right: 1px solid #dbdbd2;
+  border-right: 1.3px solid #dbdbd2;
 }
 
 .avatar {
@@ -184,12 +182,12 @@ header {
   color: #b6b9bb;
 }
 
+/* ---------- */
 /* SECTION MESSAGE */
 .message {
   float: left;
   width: 65%;
   height: 100%;
-  border: 1px solid black;
 }
 
 /* HEADER INFO MSG RULES */
@@ -206,7 +204,7 @@ header {
 }
 
 .avt-img img {
-  width: 60px;
+  width: 58px;
   margin-right: 10px;
   border-radius: 50%;
 }
@@ -217,7 +215,7 @@ header {
 }
 
 .msg-info {
-  padding: 10px 0;
+  padding: 8px 0;
 }
 
 .msg-info h5 {
@@ -228,4 +226,84 @@ header {
   font-size: 22px;
   margin-right: 20px;
   color: 	#b1b1b1;
+}
+
+/* BACKGROUND IMAGE ANG MSG RULES */
+.background-msg {
+  background: url(img/mine.jpg);
+  height: 82%;
+  padding: 25px 60px;
+  overflow: auto;
+}
+
+.msg-send {
+  float: right;
+  clear: both;
+  background-color: #d5f9ba;
+  height: 65px;
+  width: 40%;
+  border-radius: 10px;
+  padding: 0 12px;
+  margin-bottom: 10px;
+}
+
+.msg-send h4 {
+  padding-top: 22px;
+  margin-bottom: 3px;
+  font-weight: 500;
+}
+
+.msg-send h6 {
+  color: #b6b9bb;
+  text-align: right;
+  font-weight: 500;
+}
+
+.msg-received h4 {
+  padding-top: 22px;
+  margin-bottom: 3px;
+  font-weight: 500;
+}
+
+.msg-received h6 {
+  color: #b6b9bb;
+  text-align: right;
+  font-weight: 500;
+}
+
+.msg-received {
+  float: left;
+  clear: both;
+  background-color: #ffffff;
+  height: 65px;
+  width: 40%;
+  border-radius: 10px;
+  padding: 0 12px;
+  margin-bottom: 10px;
+}
+
+/* SECTION EMOTICON AND INPUT WRITING MSG RULES */
+.write-msg {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  height: calc(100% - 90.8%);
+  background-color: #f3eeea;
+  border-left: 1.3px solid #e2e2e2;
+}
+
+.write-msg i {
+  font-size: 25px;
+  color: #6b7376;
+}
+
+.write-msg input {
+  width: 780px;
+  height: 50px;
+  text-indent: 15px;
+  font-weight: 300;
+  font-size: 15px;
+  border: none;
+  border-radius: 5px;
 }
