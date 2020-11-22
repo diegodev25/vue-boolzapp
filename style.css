@@ -232,40 +232,35 @@ header {
 .background-msg {
   background: url(img/mine.jpg);
   height: 82%;
-  padding: 25px 60px;
+  padding: 25px 40px;
   overflow: auto;
 }
 
 .msg-send {
   float: right;
   clear: both;
+  position: relative;
   background-color: #d5f9ba;
-  height: 65px;
-  width: 40%;
+  min-height: 70px;
+  width: 48%;
   border-radius: 10px;
   padding: 0 12px;
   margin-bottom: 10px;
 }
 
 .msg-send h4 {
-  padding-top: 22px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   margin-bottom: 3px;
   font-weight: 500;
 }
 
 .msg-send h6 {
-  color: #b6b9bb;
-  text-align: right;
-  font-weight: 500;
-}
-
-.msg-received h4 {
-  padding-top: 22px;
-  margin-bottom: 3px;
-  font-weight: 500;
-}
-
-.msg-received h6 {
+  position: absolute;
+  top: 90%;
+  right: 2%;
+  transform: translateY(-90%);
   color: #b6b9bb;
   text-align: right;
   font-weight: 500;
@@ -274,12 +269,31 @@ header {
 .msg-received {
   float: left;
   clear: both;
+  position: relative;
   background-color: #ffffff;
-  height: 65px;
-  width: 40%;
+  min-height: 70px;
+  width: 48%;
   border-radius: 10px;
   padding: 0 12px;
   margin-bottom: 10px;
+}
+
+.msg-received h4 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-bottom: 3px;
+  font-weight: 500;
+}
+
+.msg-received h6 {
+  position: absolute;
+  top: 90%;
+  right: 2%;
+  transform: translateY(-90%);
+  color: #b6b9bb;
+  text-align: right;
+  font-weight: 500;
 }
 
 /* SECTION EMOTICON AND INPUT WRITING MSG RULES */
@@ -299,8 +313,8 @@ header {
 }
 
 .write-msg input {
-  width: 780px;
-  height: 50px;
+  width: 460px;
+  height: 45px;
   text-indent: 15px;
   font-weight: 300;
   font-size: 15px;
