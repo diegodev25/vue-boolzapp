@@ -123,7 +123,6 @@ let app = new Vue({
         this.contacts[this.index].message.push(objectMsg);
         this.msg = '';
         setTimeout(this.autoReply, 1000);
-        this.index = 0;
       }
     },
     // funzione che genera la risposta dopo un secondo
