@@ -3,6 +3,8 @@ let app = new Vue({
   data: {
     // dato per controllare la chat attiva
     index: 0,
+    msg: '',
+    reply: 'Ok',
     // array della sezione contatti
     contacts: [
       {
@@ -11,22 +13,27 @@ let app = new Vue({
         message: [
           {
             text: 'Lo sai che ha aperto una nuova pizzeria?',
+            date: '10/01/2020 15:30:55',
             modality: 'exit'
           },
           {
             text: 'Si, ma preferirei andare al cinema',
+            date: '10/01/2020 15:50:00',
             modality: 'entry'
           },
           {
             text: 'Ok, va bene!',
+            date: '20/11/2020 10:52:02',
             modality: 'exit'
           },
           {
             text: 'Ci vediamo dopo!',
+            date: '20/11/2020 12:01:31',
             modality: 'exit'
           },
           {
             text: 'Perfetto, a dopo!',
+            date: '20/11/2020 12:02:00',
             modality: 'entry'
           }
         ]
@@ -37,14 +44,17 @@ let app = new Vue({
         message: [
           {
             text: 'Ciao Fabio, come va?',
+            date: '18/11/2020 10:34:22',
             modality: 'exit'
           },
           {
             text: 'Ehilà, tutto bene, a te come va?',
+            date: '18/11/2020 10:45:56',
             modality: 'entry'
           },
           {
             text: 'Tutto bene anche io, grazie!',
+            date: '18/11/2020 11:30:09',
             modality: 'exit'
           }
         ]
@@ -55,21 +65,41 @@ let app = new Vue({
         message: [
           {
             text: 'Ciao Samu, oggi pomeriggio ti va di andare a fare una corsetta?',
+            date: '22/11/2020 14:30:11',
             modality: 'exit'
           },
           {
             text: 'Si certo, quando vuoi!',
+            date: '22/11/2020 14:45:29',
             modality: 'entry'
           },
           {
             text: 'Perfetto, ci vediamo più tardi!',
+            date: '22/11/2020 15:01:34',
             modality: 'exit'
           }
         ]
       },
       {
         name: 'Luisa',
-        img: 'img/avatar_4.jpg'
+        img: 'img/avatar_4.jpg',
+        message: [
+          {
+            text: 'Ciao Luisa, come stai?',
+            date: '23/11/2020 11:09:23',
+            modality: 'exit'
+          },
+          {
+            text: 'Ehi, tutto bene, tu?',
+            date: '23/11/2020 11:25:02',
+            modality: 'entry'
+          },
+          {
+            text: 'Benissimo, grazie!',
+            date: '23/11/2020 11:52:44',
+            modality: 'exit'
+          }
+        ]
       }
     ] // fine array sezione contatti
   }, // fine sezione data
@@ -77,6 +107,30 @@ let app = new Vue({
     // funzione per verificare la chat Attiva
     chatActive: function (i) {
       this.index = i;
+    },
+    // funzione per inserire il nuovo messaggio nella chat selezionata
+    enterMessage: function () {
+      if (this.msg != '') {
+        // variabile che stabilisce data e ora instantanea
+        var moment = new Date().toLocaleString();
+        // variabile che stabilisce un oggetto di dati del messaggio inviato
+        var objectMsg = {
+          text: this.msg,
+          date: moment,
+          modality: 'exit'
+        };
+        // inserire l'oggetto dentro all'array contacts
+        this.contacts[this.index].message.push(objectMsg);
+        this.msg = '';
+      }
+    },
+    // funzione che genera la risposta dopo un secondo
+    autoReply: function () {
+      var replyPc = {
+        text: this.reply,
+        date: moment,
+        modality: 'entry'
+      };
     }
   }
 })

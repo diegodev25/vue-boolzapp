@@ -73,7 +73,7 @@
             <img :src="contacts[index].img" alt="Avatar">
             <div class="msg-info">
               <h4>{{contacts[index].name}}</h4>
-              <h5>Ultimo accesso oggi alle 20/11/2020 12:01:32</h5>
+              <h5>Ultimo accesso alle {{contacts[index].message[contacts[index].message.length-1].date}}</h5>
             </div>
           </div>
           <!-- icon setting msg -->
@@ -87,14 +87,14 @@
         <div class="background-msg">
           <div v-for="chat in contacts[index].message" :class="chat.modality=='exit' ? 'msg-send' : 'msg-received'">
             <h4>{{chat.text}}</h4>
-            <h6>10/01/2020 15:50:55</h6>
+            <h6>{{chat.date}}</h6>
           </div>
         </div>
         <!-- SECTION EMOTICON AND INPUT WRITING MSG -->
         <div class="write-msg">
           <i class="far fa-smile"></i>
-          <input type="text" name="" placeholder="Scrivi un messaggio">
-          <i class="fas fa-microphone"></i>
+          <input v-model="msg" @keyup.enter="enterMessage" type="text" name="" placeholder="Scrivi un messaggio">
+          <i @click="enterMessage" class="fas fa-microphone"></i>
         </div>
       </section>
     </main>
