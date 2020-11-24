@@ -46,12 +46,26 @@ let app = new Vue({
           {
             text: 'Tutto bene anche io, grazie!',
             modality: 'exit'
-          },
+          }
         ]
       },
       {
         name: 'Samuele',
-        img: 'img/avatar_3.jpg'
+        img: 'img/avatar_3.jpg',
+        message: [
+          {
+            text: 'Ciao Samu, oggi pomeriggio ti va di andare a fare una corsetta?',
+            modality: 'exit'
+          },
+          {
+            text: 'Si certo, quando vuoi!',
+            modality: 'entry'
+          },
+          {
+            text: 'Perfetto, ci vediamo più tardi!',
+            modality: 'exit'
+          }
+        ]
       },
       {
         name: 'Luisa',

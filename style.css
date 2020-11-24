@@ -330,3 +330,72 @@ header {
   border: none;
   border-radius: 5px;
 }
+
+/* ------- */
+/* MEDIA QUERY */
+@media all and (min-width: 970px) and (max-width: 1239px) {
+  .icon-right i {
+    font-size: 18px;
+    margin-right: 15px;
+  }
+
+  .icon-right i:nth-child(3) {
+    margin-right: 5px;
+  }
+
+  .notification i {
+    font-size: 22px;
+    padding: 12px 10px;
+  }
+
+  .text h5 {
+    font-size: 12px;
+  }
+
+  .text h6 {
+    font-size: 10px;
+  }
+
+  .search-input i {
+    left: 20px;
+  }
+
+  .name-img img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .text-info > h4 {
+    font-size: 13px;
+  }
+
+  .date h6 {
+    font-size: 10px;
+  }
+
+  .avt-img img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .msg-info h4 {
+    font-size: 13px;
+  }
+
+  .msg-info h5 {
+    font-size: 12px;
+  }
+
+  .i-msg i {
+    font-size: 18px;
+    margin-right: 15px;
+  }
+
+  .msg-send h4 {
+    font-size: 14px;
+  }
+
+  .msg-received h4 {
+    font-size: 14px;
+  }
+}
