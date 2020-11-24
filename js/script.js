@@ -112,7 +112,7 @@ let app = new Vue({
     enterMessage: function () {
       if (this.msg != '') {
         // variabile che stabilisce data e ora instantanea
-        var moment = new Date().toLocaleString();
+        let moment = new Date().toLocaleString();
         // variabile che stabilisce un oggetto di dati del messaggio inviato
         var objectMsg = {
           text: this.msg,
@@ -122,15 +122,21 @@ let app = new Vue({
         // inserire l'oggetto dentro all'array contacts
         this.contacts[this.index].message.push(objectMsg);
         this.msg = '';
+        setTimeout(this.autoReply, 1000);
+        this.index = 0;
       }
     },
     // funzione che genera la risposta dopo un secondo
     autoReply: function () {
+      // variabile che stabilisce data e ora instantanea
+      let moment = new Date().toLocaleString();
       var replyPc = {
         text: this.reply,
         date: moment,
         modality: 'entry'
       };
+      // inserire l'oggetto dentro all'array contacts
+      this.contacts[this.index].message.push(replyPc);
     }
   }
 })
