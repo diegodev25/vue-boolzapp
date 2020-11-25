@@ -51,7 +51,7 @@
         <!-- RECENT CHAT -->
         <div class="recent-chat">
           <!-- 1° chat -->
-          <div v-for="(list, i) in contacts" v-if="list.name.toLowerCase().indexOf(search.toLowerCase())> -1" @click="chatActive(i)" :class="{'chat-color': i==index}" class="chat">
+          <div v-for="(list, i) in contacts" v-if="list.name.toLowerCase().includes(search.toLowerCase())" @click="chatActive(i)" :class="{'chat-color': i==index}" class="chat">
             <div class="name-img">
               <img :src="list.img" alt="Avatar">
               <div class="text-info">
