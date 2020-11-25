@@ -45,13 +45,13 @@
         </div>
         <!-- SEARCH FOR A NEW CHAT -->
         <div class="search-input">
-          <input type="search" name="" placeholder="Cerca o inizia una nuova chat">
+          <input v-model="search" type="search" name="" placeholder="Cerca o inizia una nuova chat">
           <i class="fas fa-search"></i>
         </div>
         <!-- RECENT CHAT -->
         <div class="recent-chat">
           <!-- 1° chat -->
-          <div v-for="(list, i) in contacts" @click="chatActive(i)" :class="{'chat-color': i==index}" class="chat">
+          <div v-for="(list, i) in contacts" v-if="list.name.toLowerCase().indexOf(search.toLowerCase())> -1" @click="chatActive(i)" :class="{'chat-color': i==index}" class="chat">
             <div class="name-img">
               <img :src="list.img" alt="Avatar">
               <div class="text-info">
@@ -60,7 +60,7 @@
               </div>
             </div>
             <div class="date">
-              <h6>20/11/2020 10:52:03</h6>
+              <h6>{{list.message[list.message.length - 1].date}}</h6>
             </div>
           </div>
         </div>
@@ -86,6 +86,7 @@
         <!-- BACKGROUND IMAGE AND MSG INVIATI -->
         <div class="background-msg">
           <div v-for="chat in contacts[index].message" :class="chat.modality=='exit' ? 'msg-send' : 'msg-received'">
+            <i class="fas fa-chevron-down"></i>
             <h4>{{chat.text}}</h4>
             <h6>{{chat.date}}</h6>
           </div>

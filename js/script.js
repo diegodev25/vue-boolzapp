@@ -4,6 +4,7 @@ let app = new Vue({
     // dato per controllare la chat attiva
     index: 0,
     msg: '',
+    search: '',
     reply: 'Ok',
     // array della sezione contatti
     contacts: [
@@ -14,7 +15,7 @@ let app = new Vue({
           {
             text: 'Lo sai che ha aperto una nuova pizzeria?',
             date: '10/01/2020 15:30:55',
-            modality: 'exit'
+            modality: 'exit',
           },
           {
             text: 'Si, ma preferirei andare al cinema',
@@ -136,6 +137,6 @@ let app = new Vue({
       };
       // inserire l'oggetto dentro all'array contacts
       this.contacts[this.index].message.push(replyPc);
-    }
+    },
   }
 })
