@@ -123,7 +123,7 @@ header {
 }
 
 .search-input input {
-  width: 470px;
+  width: 92%;
   height: 35px;
   text-indent: 60px;
   font-size: 12px;
@@ -174,6 +174,10 @@ header {
   display: flex;
 }
 
+.text-info {
+  width: 68%;
+}
+
 .text-info > h4 {
   margin-bottom: 5px;
 }
@@ -185,6 +189,7 @@ header {
 .date {
   display: flex;
   justify-content: flex-end;
+  width: 27%;
 }
 
 .date h6 {
@@ -242,7 +247,7 @@ header {
   background: url(img/mine.jpg);
   height: calc(100% - 150px);
   padding: 25px 40px;
-  overflow: auto;
+  overflow-y: auto;
 }
 
 .msg-send {
@@ -251,7 +256,7 @@ header {
   clear: both;
   background-color: #d5f9ba;
   min-height: 30px;
-  min-width: 24%;
+  min-width: 28%;
   max-width: 48%;
   border-radius: 10px;
   padding: 10px;
@@ -259,20 +264,19 @@ header {
 }
 
 .msg-send h4 {
-  vertical-align: middle;
   margin-bottom: 3px;
   font-weight: 500;
 }
 
 .msg-send i {
   float: right;
+  clear: both;
   font-size: 16px;
   color: #6b7376;
   margin-left: 5px;
 }
 
 .msg-send h6 {
-  vertical-align: bottom;
   color: #b6b9bb;
   text-align: right;
   font-weight: 500;
@@ -284,7 +288,7 @@ header {
   clear: both;
   background-color: #ffffff;
   min-height: 30px;
-  min-width: 24%;
+  min-width: 28%;
   max-width: 48%;
   border-radius: 10px;
   padding: 10px;
@@ -299,6 +303,7 @@ header {
 
 .msg-received i {
   float: right;
+  clear: both;
   font-size: 16px;
   color: #6b7376;
   margin-left: 5px;
@@ -372,8 +377,20 @@ header {
     height: 55px;
   }
 
+  .text-info {
+    width: 55%;
+  }
+
   .text-info > h4 {
     font-size: 13px;
+  }
+
+  .text-info > h5 {
+    font-size: 12px;
+  }
+
+  .date {
+    width: 23%;
   }
 
   .date h6 {
@@ -404,5 +421,11 @@ header {
 
   .msg-received h4 {
     font-size: 14px;
+  }
+}
+
+@media all and (max-width: 969px) {
+  .container {
+    width: 95%;
   }
 }

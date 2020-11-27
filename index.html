@@ -50,7 +50,7 @@
         </div>
         <!-- RECENT CHAT -->
         <div class="recent-chat">
-          <!-- 1° chat -->
+          <!-- chat name -->
           <div v-for="(list, i) in contacts" v-if="list.name.toLowerCase().includes(search.toLowerCase())" @click="chatActive(i)" :class="{'chat-color': i==index}" class="chat">
             <div class="name-img">
               <img :src="list.img" alt="Avatar">
@@ -84,7 +84,7 @@
           </div>
         </div>
         <!-- BACKGROUND IMAGE AND MSG INVIATI -->
-        <div class="background-msg">
+        <div id="container-chat" class="background-msg">
           <div v-for="chat in contacts[index].message" :class="chat.modality=='exit' ? 'msg-send' : 'msg-received'">
             <i class="fas fa-chevron-down"></i>
             <h4>{{chat.text}}</h4>
@@ -95,7 +95,7 @@
         <div class="write-msg">
           <i class="far fa-smile"></i>
           <input v-model="msg" @keyup.enter="enterMessage" type="text" name="" placeholder="Scrivi un messaggio">
-          <i @click="enterMessage" class="fas fa-microphone"></i>
+          <i @click="enterMessage" class="fas fa-paper-plane"></i>
         </div>
       </section>
     </main>

@@ -6,6 +6,7 @@ let app = new Vue({
     msg: '',
     search: '',
     reply: 'Ok',
+    emoticon: ['&#9786', '&#128512', '&#128513', '&#128514',],
     // array della sezione contatti
     contacts: [
       {
@@ -114,6 +115,7 @@ let app = new Vue({
       if (this.msg != '') {
         // variabile che stabilisce data e ora instantanea
         let moment = new Date().toLocaleString();
+        console.log(moment);
         // variabile che stabilisce un oggetto di dati del messaggio inviato
         var objectMsg = {
           text: this.msg,
@@ -124,6 +126,7 @@ let app = new Vue({
         this.contacts[this.index].message.push(objectMsg);
         this.msg = '';
         setTimeout(this.autoReply, 1000);
+        this.scrollAuto();
       }
     },
     // funzione che genera la risposta dopo un secondo
@@ -137,6 +140,16 @@ let app = new Vue({
       };
       // inserire l'oggetto dentro all'array contacts
       this.contacts[this.index].message.push(replyPc);
+      this.scrollAuto();
     },
+    // funzione per scrollare a fine pagina con l'ultimo messaggio
+    scrollToEnd: function () {
+      var container = this.$el.querySelector("#container-chat");
+      container.scrollTop = container.scrollHeight;
+    },
+    // impostare un tempo per far si che la funzione scroll si attivi
+    scrollAuto: function () {
+      setTimeout(this.scrollToEnd, 1);
+    }
   }
 })
