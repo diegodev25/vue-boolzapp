@@ -6,7 +6,7 @@ let app = new Vue({
     msg: '',
     search: '',
     reply: 'Ok',
-    emoticon: ['&#9786', '&#128512', '&#128513', '&#128514',],
+    emoticon: ['&#9786;', '&#128512;', '&#128513;', '&#128514;',],
     // array della sezione contatti
     contacts: [
       {
