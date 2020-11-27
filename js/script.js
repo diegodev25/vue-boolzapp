@@ -6,7 +6,7 @@ let app = new Vue({
     msg: '',
     search: '',
     reply: 'Ok',
-    emoticon: ["✌","😂","😝","😁","😱","👉","🙌","🍻","🔥","🌈","☀","🎈","🌹","💄","🎀","⚽","🎾","🏁","😡","👿","🐻","🐶","🐬","🐟","🍀","👀","🚗","🍎","💝","💙","👌","❤","😍","😉","😓","😳","💪","💩","🍸","🔑","💖","🌟","🎉","🌺","🎶","👠","🏈","⚾","🏆","👽","💀","🐵","🐮","🐩","🐎","💣","👃","👂","🍓","💘","💜","👊","💋","😘","😜","😵","🙏","👋","🚽","💃","💎","🚀","🌙","🎁","⛄","🌊","⛵","🏀","🎱","💰","👶","👸","🐰","🐷","🐍","🐫","🔫","👄","🚲","🍉","💛","💚"],
+    emoticon: ["😀","😂","😝","😁","😱","👉","🙌","🍻","🔥","🌈","☀","🎈","🌹","💄","🎀","⚽","🎾","🏁","😡","👿","🐻","🐶","🐬","🐟","🍀","👀","🚗","🍎","💝","💙","👌","❤","😍","😉","😓","😳","💪","💩","🍸","🔑","💖","🌟","🎉","🌺","🎶","👠","🏈","⚾","🏆","👽","💀","🐵","🐮","🐩","🐎","💣","👃","👂","🍓","💘","💜","👊","💋","😘","😜","😵","🙏","👋","🚽","💃","💎","🚀","🌙","🎁","⛄","🌊","⛵","🏀","🎱","💰","👶","👸","🐰","🐷","🐍","🐫","🔫","👄","🚲","🍉","💛","💚"],
     // array della sezione contatti
     contacts: [
       {
@@ -150,6 +150,27 @@ let app = new Vue({
     // impostare un tempo per far si che la funzione scroll si attivi
     scrollAuto: function () {
       setTimeout(this.scrollToEnd, 1);
+    },
+    // Funzione rimuovere selezione messaggi
+    removeSelect: function() {
+      this.contacts[this.index].message.forEach((item, i) => Vue.delete(this.contacts[this.index].message[i], "isSelected"));
+    },
+    // Funzione selezione messaggio (per sottomenu)
+    dropdownView: function(i) {
+      if (this.contacts[this.index].message[i].isSelected === true) {
+        Vue.delete(this.contacts[this.index].message[i], "isSelected")
+      } else {
+        this.removeSelect()
+        Vue.set(this.contacts[this.index].message[i], "isSelected", true)
+      }
+    },
+    // funzione per eliminare il messaggio
+    deleteMsg: function (i) {
+      Vue.delete(this.contacts[this.index].message, i)
+    },
+    // funzione per inserire un emoticon al click
+    append(element) {
+      this.msg += element;
     }
   }
 })

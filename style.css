@@ -251,7 +251,6 @@ header {
 }
 
 .msg-send {
-  position: relative;
   float: right;
   clear: both;
   background-color: #d5f9ba;
@@ -269,11 +268,13 @@ header {
 }
 
 .msg-send i {
+  position: relative;
   float: right;
   clear: both;
   font-size: 16px;
   color: #6b7376;
   margin-left: 5px;
+  cursor: pointer;
 }
 
 .msg-send h6 {
@@ -283,7 +284,6 @@ header {
 }
 
 .msg-received {
-  position: relative;
   float: left;
   clear: both;
   background-color: #ffffff;
@@ -296,25 +296,50 @@ header {
 }
 
 .msg-received h4 {
-  vertical-align: middle;
   margin-bottom: 3px;
   font-weight: 500;
 }
 
 .msg-received i {
+  position: relative;
   float: right;
   clear: both;
   font-size: 16px;
   color: #6b7376;
   margin-left: 5px;
+  cursor: pointer;
 }
 
 .msg-received h6 {
-  vertical-align: bottom;
   color: #b6b9bb;
   text-align: right;
   font-weight: 500;
   margin-bottom: 5px;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 0;
+  height: 60px;
+  width: 180px;
+  padding-left: 1rem;
+  padding-top: 0.8rem;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #b1b1b1;
+  z-index: 20;
+}
+
+.dropdown h5 {
+  cursor: pointer;
+  color: black;
+  padding-bottom: 5px;
+}
+
+.visible {
+  display: block;
 }
 
 /* SECTION EMOTICON AND INPUT WRITING MSG RULES */
@@ -329,8 +354,31 @@ header {
 }
 
 .write-msg i {
+  cursor: pointer;
   font-size: 25px;
   color: #6b7376;
+}
+
+.write-msg i:nth-child(1) {
+  position: relative;
+}
+
+.dropdown-emoticon {
+  display: none;
+  position: absolute;
+  left: -21px;
+  bottom: 50px;
+  height: 350px;
+  width: 335px;
+  background-color: white;
+  padding: 10px;
+  z-index: 10;
+}
+
+
+
+.dropdown-emoticon span {
+  margin: 5px;
 }
 
 .write-msg input {
@@ -426,6 +474,6 @@ header {
 
 @media all and (max-width: 969px) {
   .container {
-    width: 95%;
+    width: 96%;
   }
 }
