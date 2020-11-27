@@ -363,8 +363,7 @@ header {
   position: relative;
 }
 
-.dropdown-emoticon {
-  display: none;
+.emoticon-list {
   position: absolute;
   left: -21px;
   bottom: 50px;
@@ -375,7 +374,7 @@ header {
   z-index: 10;
 }
 
-.dropdown-emoticon span {
+.emoticon-list span {
   margin: 5px;
 }
 

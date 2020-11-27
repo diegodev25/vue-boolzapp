@@ -98,8 +98,8 @@
         </div>
         <!-- SECTION EMOTICON AND INPUT WRITING MSG -->
         <div class="write-msg">
-          <i @click="isActive = !isActive" class="far fa-smile">
-            <div :class="{visible: isActive}" class="dropdown-emoticon">
+          <i @click="show = !show" class="far fa-smile">
+            <div v-show='show' class="emoticon-list">
               <span v-for="(emoji, index) in emoticon"
                     :key="index"
                     @click="append(emoji)">{{emoji}}

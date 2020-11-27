@@ -4,8 +4,8 @@ let app = new Vue({
     // dato per controllare la chat attiva
     index: 0,
     msg: '',
-    isActive: false,
     search: '',
+    show: false,
     reply: 'Ok',
     emoticon: ["😀","😂","😝","😁","😱","👉","🙌","🍻","🔥","🌈","☀","🎈","🌹","💄","🎀","⚽","🎾","🏁","😡","👿","🐻","🐶","🐬","🐟","🍀","👀","🚗","🍎","💝","💙","👌","❤","😍","😉","😓","😳","💪","💩","🍸","🔑","💖","🌟","🎉","🌺","🎶","👠","🏈","⚾","🏆","👽","💀","🐵","🐮","🐩","🐎","💣","👃","👂","🍓","💘","💜","👊","💋","😘","😜","😵","🙏","👋","🚽","💃","💎","🚀","🌙","🎁","⛄","🌊","⛵","🏀","🎱","💰","👶","👸","🐰","🐷","🐍","🐫","🔫","👄","🚲","🍉","💛","💚"],
     // array della sezione contatti
@@ -116,7 +116,6 @@ let app = new Vue({
       if (this.msg != '') {
         // variabile che stabilisce data e ora instantanea
         let moment = new Date().toLocaleString();
-        console.log(moment);
         // variabile che stabilisce un oggetto di dati del messaggio inviato
         var objectMsg = {
           text: this.msg,
